@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#define SIZE 1000
+#define SIZE 200
 
 using namespace std;
 
