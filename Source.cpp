@@ -8,7 +8,7 @@ int main()
 
 	char type[SIZE];
 
-	overcoat clother_1, clother_2;
+	overcoat clother_1, clother_2;// первая и вторая одежда
 
 	enum menu {CMP_TUPE = 1, COPY, CMP_PRICE};
 
@@ -36,15 +36,15 @@ int main()
 
 		switch (user)
 		{
-		case CMP_TUPE:
+		case CMP_TUPE://сравнивает тип одежды
 			clother_1 == clother_2 ? cout << "\n тип одежды равен\n" : cout << "\nтип одежды не равен\n";
 			break;
-		case COPY:
+		case COPY://копирует информацию из одной одежды в другую
 			clother_2 = clother_1;
 			printf("\nцена и тип второй одежды \n%d", clother_2.get_price());
 			printf("\n%s", clother_2.get_type());
 			break;
-		case CMP_PRICE:
+		case CMP_PRICE://сравнивает цену одежды
 			clother_1 > clother_2 ? cout << "\n цена первой одежды больше\n" : cout << "\nцена второй одежды больше\n";
 			break;
 		default:

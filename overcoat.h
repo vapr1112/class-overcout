@@ -19,11 +19,12 @@ public:
 		strcpy_s(type, strlen(type_p) + 1, type_p);
 	}
 
-	overcoat(const overcoat& clother) : price{ clother.price }, type{ new char[strlen(clother.type) + 1] }
+	overcoat(const overcoat& clother) : price{ clother.price }, type{ new char[strlen(clother.type) + 1] }//конструктор копирования
 	{
 		strcpy_s(type, strlen(clother.type) + 1, clother.type);
 	}
 
+	//аксессоры и модификаторы
 	void set_prise(const int prise_p)
 	{
 		price = prise_p;
@@ -48,6 +49,7 @@ public:
 		return type;
 	}
 
+	//перегрузки операторов
 	friend bool operator==(const overcoat& clothes_1, const overcoat& clothes_2)
 	{
 		return strcmp(clothes_1.type, clothes_2.type) == 0 ? 1 : 0;
@@ -74,7 +76,7 @@ public:
 		return clothes_1.price > clothes_2.price ? 1 : 0;
 	}
 
-	~overcoat()
+	~overcoat()//деструктор
 	{
 		delete[] type;
 	}
